@@ -1,0 +1,224 @@
+/* HTML element font size depends on screen size, then other sizes are relative to that (REMs) */
+
+html
+{
+	font-size: 18px;
+}
+/* small mobile */
+@media screen and (max-width: 500px)
+{
+	html
+	{
+		font-size: 12px;
+	}
+}
+
+/* Map style */
+
+.mapa
+{
+	width: 100%;
+	height: calc(100% - 5rem);
+}
+
+/* Window general styles */
+
+html, body
+{
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	height: 100%;
+}
+body
+{
+	background: none;
+	position: relative;
+}
+
+/* Screens common styles */
+
+section[role="region"]
+{
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+#container
+{
+	height: 100%;
+}
+
+/* Main screen style */
+
+#container [data-position="current"]
+{
+	height: 100%;
+}
+
+/* Settings screen style */
+
+#container [data-position="left"]
+{
+	transform: translateX(-100%);
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+/* Map toolbar styles */
+
+.bottom-toolbar
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 4rem;
+	background-color: rgba(0, 0, 0, 0.75);
+	z-index: 1004;
+}
+.invisible
+{
+	display: none;
+}
+
+/* Map toolbar buttons styles */
+
+.bottom-btn
+{
+	height: 4rem;
+	border: none;
+	width: 6rem;
+	background: transparent no-repeat center / 3rem !important;
+	margin: 0 calc((100% - 25rem) / 8);
+}
+.bottom-btn.disabled
+{
+	opacity: 0.3;
+	pointer-events: none;
+}
+.bottom-btn:active
+{
+	background-color: #008AAA !important;
+}
+.refresh-btn
+{
+	background-image: url("images/icons/refresh.png") !important;
+}
+.delete-btn
+{
+	background-image: url("images/icons/delete.png") !important;
+}
+.pause-btn
+{
+	background-image: url("images/icons/pause.png") !important;
+}
+.play-btn
+{
+	background-image: url("images/icons/play.png") !important;
+}
+
+/* Screens scroll animations */
+
+.opensettings #mainwindow
+{
+	animation: 0.4s ease 0s normal forwards 1 currentToRight;
+}
+.opensettings #settings
+{
+	animation: 0.4s ease 0s normal forwards 1 leftToCurrent;
+}
+.closesettings #mainwindow
+{
+	animation: 0.4s ease 0s normal forwards 1 rightToCurrent;
+}
+.closesettings #settings
+{
+	animation: 0.4s ease 0s normal forwards 1 currentToLeft;
+}
+@keyframes currentToLeft
+{
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-100%); }
+}
+@keyframes rightToCurrent
+{
+	0% { transform: translateX(100%); }
+	100% { transform: translateX(0); }
+}
+@keyframes leftToCurrent
+{
+	0% { transform: translateX(-100%); }
+	100% { transform: translateX(0); }
+}
+@keyframes currentToRight
+{
+	0% { transform: translateX(0); }
+	100% { transform: translateX(100%); }
+}
+
+/* Dialog animations */
+
+.opendialog
+{
+	animation: 0.2s forwards fadeIn;
+}
+@keyframes fadeIn
+{
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+.closedialog
+{
+	animation: 0.2s forwards fadeOut;
+}
+@keyframes fadeOut
+{
+	0% { opacity: 1; }
+	100% { opacity: 0; }
+}
+
+/* Enlarge LayerSwitcher */
+
+.olControlLayerSwitcher label:not([class])
+{
+  display: inline-block;
+  vertical-align: middle;
+  width: 2.8rem;
+  height: 2.8rem;
+  position: relative;
+  background: none;
+}
+.olControlLayerSwitcher label:not([class]) input[type="checkbox"],
+.olControlLayerSwitcher label:not([class]) input[type="radio"]
+{
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.olControlLayerSwitcher label:not([class]) input + span
+{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -0.7rem 0 0 -0.7rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  pointer-events: none;
+}
+.olControlLayerSwitcher label:not([class]) input[type="checkbox"] + span
+{
+  background: url(images/icons/checkbox.png) no-repeat center top / 1.4rem auto;
+}
+.olControlLayerSwitcher label:not([class]) input[type="radio"] + span
+{
+  background: url(images/icons/radio.png) no-repeat center top / 1.4rem auto;
+}
+.olControlLayerSwitcher label:not([class]) input:checked + span
+{
+  background-position: center bottom;
+}
+

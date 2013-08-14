@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html manifest="offline.appcache">
+
+	<!-- HTML header -->
+
+	<head>
+
+		<!-- Title -->
+
+		<title data-l10n-id="hiking-guide-title">Hiking Guide</title>
+
+		<!-- Localization files -->
+
+		<link rel="resource" type="application/l10n" href="locales/locales.ini">
+
+		<!-- FirefoxOS general styles -->
+
+		<link rel="stylesheet" type="text/css" href="shared/style/action_menu.css">
+		<link rel="stylesheet" type="text/css" href="shared/style/buttons.css">
+		<link rel="stylesheet" type="text/css" href="shared/style/headers.css">
+		<link rel="stylesheet" type="text/css" href="shared/style/input_areas.css">
+		<link rel="stylesheet" type="text/css" href="shared/style/switches.css">
+		<link rel="stylesheet" type="text/css" href="shared/style_unstable/lists.css">
+
+		<!-- Localization code -->
+
+		<script type="text/javascript" src="shared/js/l10n.js"></script>
+
+		<!-- OpenLayers javascript code -->
+
+		<script type="text/javascript" src="OpenLayers/OpenLayers.js"></script>
+
+		<!-- Google Maps v3 javascript code (remote) -->
+
+	        <script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&amp;sensor=false"></script>
+
+		<!-- enyo javascript code -->
+
+		<script type="text/javascript" src="enyo/enyo.js"></script>
+
+		<!-- Application own styles -->
+
+		<link rel="stylesheet" type="text/css" href="css/hikingguide.css">
+
+	</head>
+
+	<!-- HTML body -->
+
+	<body id="body">
+
+		<!-- Application javascript code -->
+
+		<script type="text/javascript" src="js/hikingguide.js"></script>
+
+		<!-- Container for all screens -->
+
+		<div id="container">
+
+			<!-- Main screen -->
+
+			<section id="mainwindow" role="region" data-position="current">
+
+				<!-- Header -->
+
+				<header>
+
+					<!-- Button for settings -->
+
+					<button id="menubutton"><span data-l10n-id="settings-button-text" class="icon icon-menu">Settings</span></button>
+
+					<!-- Heading -->
+
+					<h1 data-l10n-id="main-heading">Hiking Guide</h1>
+
+				</header>
+
+				<!-- Map -->
+
+				<div id="map" class="mapa">
+
+					<!-- Map buttons toolbar (over map) -->
+
+					<div id="bottom-toolbar" class="bottom-toolbar invisible">
+
+						<!-- Manual refresh button -->
+
+						<button id="locate" class="refresh-btn bottom-btn"></button>
+
+						<!-- Refresh pause & play button -->
+
+						<button id="locateplaypause" class="pause-btn bottom-btn"></button>
+
+						<!-- Way delete button -->
+
+						<button id="waydelete" class="delete-btn bottom-btn"></button>
+
+					</div>
+
+				</div>
+
+			</section>
+
+			<!-- Settings screen -->
+
+			<section id="settings" class="skin-dark" role="region" data-position="left">
+
+				<!-- Header -->
+
+				<header>
+
+					<!-- Settings OK button -->
+
+					<menu type="toolbar"><button id="settingsokbutton" data-l10n-id="settings-ok-text">OK</button></menu>
+
+					<!-- Heading -->
+
+					<h1 data-l10n-id="settings-heading">Settings</h1>
+
+				</header>
+
+				<!-- Track file -->
+
+				<section data-type="list">
+
+					<!-- Label -->
+
+					<header><label for="trackfile" data-l10n-id="settings-track-file-text">Track file</label></header>
+
+					<!-- File input -->
+
+					<ul>
+						<li id="trackfileitem">
+							<p>
+								<input type="file" placeholder="GPX, KML" id="trackfile" name="files[]" />
+							</p>
+						</li>
+						<li id="trackfileselectitem">
+							<p>
+								<select id="trackfileselect">
+									<option></option>
+								</select>
+							</p>
+						</li>
+					</ul>
+
+				</section>
+
+				<!-- Position refresh options -->
+
+				<section class="radiobuttons" data-type="list">
+
+					<!-- Label -->
+
+					<header><label for="refreshoptions" data-l10n-id="settings-refresh-position-text">Refresh position</label></header>
+
+
+					<!-- Options -->
+
+					<ul>
+
+						<!-- Manual refresh -->
+
+						<li>
+							<p>
+								<label>
+									<input id="manuallocate" name="refreshoptions" checked="" type="radio">
+									<span></span>
+								</label>
+								<span data-l10n-id="settings-refresh-position-manual-text">Manual</span>
+							</p>
+						</li>
+
+						<!-- Automatic refresh -->
+
+						<li>
+							<p>
+								<label>
+									<input id="autolocate" name="refreshoptions" type="radio">
+									<span></span>
+								</label>
+								<span data-l10n-id="settings-refresh-position-automatic-text">Automatic</span>
+							</p>
+						</li>
+
+					</ul>
+
+				</section>
+
+			</section>
+
+		</div>
+
+	</body>
+
+</html>

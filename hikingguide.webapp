@@ -1,0 +1,10 @@
+{
+	"version": "1.0",
+	"name": "Hiking Guide",
+	"package_path": "https://e-gor.github.com/HikingGuide/HikingGuide.zip",
+	"developer":
+	{
+		"name": "Igor Leturia",
+		"url": "http://eibar.org/blogak/e-gorblog"
+	}
+}

@@ -23,6 +23,7 @@ CACHE MANIFEST
 /css/images/icons/refresh.png
 /css/images/icons/refresh@2x.png
 /enyo/enyo.js
+/google/google.js
 /OpenLayers/img/blank.gif
 /OpenLayers/img/cloud-popup-relative.png
 /OpenLayers/img/drag-rectangle-off.png
@@ -96,7 +97,6 @@ CACHE MANIFEST
 /shared/style/action_menu/images/ui/default.png
 /shared/style/action_menu/images/ui/gradient.png
 /shared/style/action_menu/images/ui/pattern.png
-/shared/style/action_menu/index.html
 /shared/style/action_menu.css
 /shared/style/buttons/images/icons/dialog.png
 /shared/style/buttons/images/icons/dialog@2x.png
@@ -110,7 +110,6 @@ CACHE MANIFEST
 /shared/style/buttons/images/ui/recommend.png
 /shared/style/buttons/images/ui/shadow.png
 /shared/style/buttons/images/ui/shadow@2x.png
-/shared/style/buttons/index.html
 /shared/style/buttons.css
 /shared/style/headers/images/icons/add.png
 /shared/style/headers/images/icons/add@2x.png
@@ -155,7 +154,6 @@ CACHE MANIFEST
 /shared/style/headers/images/ui/shadow.png
 /shared/style/headers/images/ui/shadow@2x.png
 /shared/style/headers/images/ui/subheader.png
-/shared/style/headers/index.html
 /shared/style/headers.css
 /shared/style/input_areas/images/icons/arrow.png
 /shared/style/input_areas/images/icons/arrow@2x.png
@@ -170,7 +168,6 @@ CACHE MANIFEST
 /shared/style/input_areas/images/ui/shadow-search@2x.png
 /shared/style/input_areas/images/ui/shadow.png
 /shared/style/input_areas/images/ui/shadow@2x.png
-/shared/style/input_areas/index.html
 /shared/style/input_areas.css
 /shared/style/switches/images/check/danger.png
 /shared/style/switches/images/check/danger@2x.png
@@ -185,7 +182,5 @@ CACHE MANIFEST
 /shared/style/switches/images/switch/handler@2x.png
 /shared/style/switches/images/switch/icon.png
 /shared/style/switches/images/switch/icon@2x.png
-/shared/style/switches/index.html
 /shared/style/switches.css
-/shared/style_unstable/lists/index.html
 /shared/style_unstable/lists.css

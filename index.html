@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Hiking Guide initial page</title>
+
+	</head>
+
+	<body id="body">
+
+		<!-- Application javascript code -->
+
+		<script type="text/javascript">
+
+			var canInstall=!!(navigator.mozApps && navigator.mozApps.installPackage);
+			if (canInstall)
+			{
+				var manifestURL=location.href.substring(0,location.href.lastIndexOf("/"))+"/hikingguide.webapp";
+				var installApp=navigator.mozApps.installPackage(manifestURL);
+			}
+			else
+			{
+				window.location="hikingguide.html";
+			};
+
+		</script>
+
+	</body>
+
+</html>

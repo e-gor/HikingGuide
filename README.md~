@@ -1,4 +1,4 @@
-Hiking Guide
+HikingGuide
 ===========
 
 A guide that will help you in your hikes with maps, tracks and GPS position.
@@ -14,7 +14,3 @@ It can show:
 - Position: If GPS is connected, it shows the current position and the path made.
 
 Hiking Guide uses the OpenLayers (http://www.openlayers.org/), Enyo (http://enyojs.com/), OpenStreetMap (http://www.openstreetmap.org) and Google Maps (http://maps.google.com) libraries.
-
-Thanks to Willy Roa (bad3di.blogspot.com) for the icon!
-
-Hiking Guide has so far been translated to Basque, English, Spanish and French.

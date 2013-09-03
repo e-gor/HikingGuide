@@ -1,5 +1,5 @@
 {
-	"version": "1.0",
+	"version": "1.01",
 	"name": "HikingGuide",
 	"description": "A guide that will help you in your hikes with maps, tracks and GPS position",
 	"type": "privileged",

@@ -1,6 +1,6 @@
 {
 	"version": "1.0",
-	"name": "Hiking Guide",
+	"name": "HikingGuide",
 	"description": "A guide that will help you in your hikes with maps, tracks and GPS position",
 	"type": "privileged",
 	"launch_path": "/hikingguide.html",
@@ -19,22 +19,22 @@
 	{
 		"eu":
 		{
-			"name": "Ibilaldi-Gidaria",
+			"name": "Ibilaldiak",
 			"description": "Zure ibilaldietan mapekin, ibilbideekin eta GPS kokapenarekin lagunduko zaituen gidaria"
 		},
 		"en":
 		{
-			"name": "Hiking Guide",
+			"name": "HikingGuide",
 			"description": "A guide that will help you in your hikes with maps, tracks and GPS position"
 		},
 		"es":
 		{
-			"name": "Guía para Excursiones",
+			"name": "Excursiones",
 			"description": "Un guía que te ayudará en tus excursiones con mapas, rutas y posición GPS"
 		},
 		"fr":
 		{
-			"name": "Guide pour Randonées",
+			"name": "Randonées",
 			"description": "Un guide que vous aidera dans vos randonnées avec des cartes, itinéraires et position GPS"
 		}
 	},

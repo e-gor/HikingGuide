@@ -15,6 +15,6 @@ It can show:
 
 Hiking Guide uses the OpenLayers (http://www.openlayers.org/), Enyo (http://enyojs.com/), OpenStreetMap (http://www.openstreetmap.org) and Google Maps (http://maps.google.com) libraries.
 
-Thanks to Willy Roa (bad3di.blogspot.com) for the icon!
+Thanks to Willy Roa (http://bad3di.blogspot.com) for the icon!
 
 Hiking Guide has so far been translated to Basque, English, Spanish and French.

@@ -68,9 +68,16 @@ function AddTrackLayerByFileOrDataUrl(file)
 		}
 	);
 
-	/* Change track layer depth position */
+	/* Change track layer depth position, depending on whether Google Maps layers are visualized (that is, whether online or not) */
 
-	map.setLayerIndex(tracklayer,1);
+	if (navigator.onLine)
+	{
+		map.setLayerIndex(tracklayer,5);
+	}
+	else
+	{
+		map.setLayerIndex(tracklayer,1);
+	};
 
 };
 
@@ -556,6 +563,11 @@ function TryEnlargeLayerSwitcher()
 			layerswitchersenlarged=layerswitchersenlarged+1;
 		};
 	};
+	googleelements=document.getElementsByClassName('olLayerGoogleV3');
+	for (var i=0;i<googleelements.length;i++)
+	{
+		googleelements[i].setAttribute('style',googleelements[i].getAttribute('style').replace('right: 138px;','').replace('bottom: 0px;','').replace('left: 0px;','').replace('z-index: 1100;','z-index: 1000;'));
+	};
 	if (layerswitchersenlarged==map.layers.length)
 	{
 		clearInterval(layerswitcherenlargeinterval);
@@ -614,6 +626,23 @@ function InitializeApplication()
 
 	osmlayer=new OpenLayers.Layer.OSM();
 	map.addLayer(osmlayer);
+
+	/* Create and add Google Maps layers (only when online) */
+
+	if (navigator.onLine)
+	{
+		googlephysicallayer=new OpenLayers.Layer.Google(mozL10n.get('main-google-physical-layer-name'),{type: google.maps.MapTypeId.TERRAIN});
+		map.addLayer(googlephysicallayer);
+
+		googlestreetslayer=new OpenLayers.Layer.Google(mozL10n.get('main-google-streets-layer-name'),{numZoomLevels: 20});
+		map.addLayer(googlestreetslayer);
+
+		googlehybridlayer=new OpenLayers.Layer.Google(mozL10n.get('main-google-hybrid-layer-name'),{type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20});
+		map.addLayer(googlehybridlayer);
+
+		googlesatellitelayer=new OpenLayers.Layer.Google(mozL10n.get('main-google-satellite-layer-name'),{type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22});
+		map.addLayer(googlesatellitelayer);
+	};
 
 	/* Zoom map to whole world */
 

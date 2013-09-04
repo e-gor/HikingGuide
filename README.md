@@ -7,7 +7,7 @@ Hiking Guide is a web app written in HTML, Javascript and CSS, and has been test
 
 It can show:
 
-- Maps: If online, it shows maps from OpenStreetMap and Google (physical, streets, hybrid and satellite).
+- Maps: If online, it shows maps from OpenStreetMap. And if not on a Firefox OS phone (security constraints do not allow to load external Javascript), it also shows Google Maps (physical, streets, hybrid and satellite).
 
 - Tracks: It can show a downloaded track. It works with GPX and KML tracks. On a Firefox OS phone, tracks must be located in a directory called "tracks" in the SD card.
 

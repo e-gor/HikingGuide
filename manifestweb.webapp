@@ -3,7 +3,7 @@
 	"name": "HikingGuide",
 	"description": "A guide that will help you in your hikes with maps, tracks and GPS position",
 	"type": "privileged",
-	"launch_path": "/hikingguide.html",
+	"launch_path": "/hikingguideweb.html",
 	"icons":
 	{
 		"60": "/hikingguide60.png",

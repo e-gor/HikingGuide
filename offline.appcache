@@ -1,9 +1,9 @@
 CACHE MANIFEST
 # v0.1
-/hikingguide.html
+/hikingguideweb.html
 /hikingguide128.png
 /hikingguide60.png
-/js/hikingguide.js
+/js/hikingguideweb.js
 /locales/locales.ini
 /locales/en.properties
 /locales/eu.properties
@@ -23,7 +23,6 @@ CACHE MANIFEST
 /css/images/icons/refresh.png
 /css/images/icons/refresh@2x.png
 /enyo/enyo.js
-/google/google.js
 /OpenLayers/img/blank.gif
 /OpenLayers/img/cloud-popup-relative.png
 /OpenLayers/img/drag-rectangle-off.png

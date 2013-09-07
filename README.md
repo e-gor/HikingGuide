@@ -18,3 +18,9 @@ Hiking Guide uses the OpenLayers (http://www.openlayers.org/), Enyo (http://enyo
 Thanks to Willy Roa (http://bad3di.blogspot.com) for the icon!
 
 Hiking Guide has so far been translated to Basque, English, Spanish and French.
+
+Hiking Guide can be run directly using Firefox on any platform in from Github (http://e-gor.github.io/HikingGuide).
+
+On a Firefox OS phone it has to be installed (otherwise the geolocation and sd-card APIs cannot be used). The installation can be done from the Firefox Marketplace (https://marketplace.firefox.com/app/hiking-guide). The Github address redirects there if on a Firefox OS phone.
+
+The source code of Hiking Guide is hosted on Github (https://github.com/e-gor/HikingGuide). Please feel free to collaborate.

@@ -5,21 +5,23 @@
 
 	</head>
 
+	<!-- enyo javascript code -->
+
+	<script type="text/javascript" src="enyo/enyo.js"></script>
+
 	<body id="body">
 
 		<!-- Application javascript code -->
 
 		<script type="text/javascript">
 
-			var canInstall=!!(navigator.mozApps && navigator.mozApps.installPackage);
-			if (canInstall)
+			if (enyo.platform.firefoxOS)
 			{
-				var manifestURL=location.href.substring(0,location.href.lastIndexOf("/"))+"/hikingguide.webapp";
-				var installApp=navigator.mozApps.installPackage(manifestURL);
+				window.location="https://marketplace.firefox.com/app/hiking-guide";
 			}
 			else
 			{
-				window.location="hikingguide.html";
+				window.location="hikingguideweb.html";
 			};
 
 		</script>

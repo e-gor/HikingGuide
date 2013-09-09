@@ -66,6 +66,29 @@ section[role="region"]
 	width: 100%;
 }
 
+/* Length display styles */
+
+#track-length-display
+{
+	position: absolute;
+	left: 0;
+	top: 5rem;
+	color: #f00;
+	font: 2rem "MozTT", Sans-serif;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1004;
+}
+#path-length-display
+{
+	position: absolute;
+	right: 0;
+	top: 5rem;
+	color: #00f;
+	font: 2rem "MozTT", Sans-serif;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1004;
+}
+
 /* Map toolbar styles */
 
 .bottom-toolbar

@@ -1,0 +1,57 @@
+--- js/hikingguideweb.js	2013-09-05 00:02:18.437403000 +0200
++++ js/hikingguide.js	2013-09-05 00:02:18.435144000 +0200
+@@ -68,16 +68,9 @@
+ 		}
+ 	);
+ 
+-	/* Change track layer depth position, depending on whether Google Maps layers are visualized (that is, whether online or not) */
++	/* Change track layer depth position */
+ 
+-	if (navigator.onLine)
+-	{
+-		map.setLayerIndex(tracklayer,5);
+-	}
+-	else
+-	{
+-		map.setLayerIndex(tracklayer,1);
+-	};
++	map.setLayerIndex(tracklayer,1);
+ 
+ };
+ 
+@@ -563,11 +556,6 @@
+ 			layerswitchersenlarged=layerswitchersenlarged+1;
+ 		};
+ 	};
+-	googleelements=document.getElementsByClassName('olLayerGoogleV3');
+-	for (var i=0;i<googleelements.length;i++)
+-	{
+-		googleelements[i].setAttribute('style',googleelements[i].getAttribute('style').replace('right: 138px;','').replace('bottom: 0px;','').replace('left: 0px;','').replace('z-index: 1100;','z-index: 1000;'));
+-	};
+ 	if (layerswitchersenlarged==map.layers.length)
+ 	{
+ 		clearInterval(layerswitcherenlargeinterval);
+@@ -627,23 +615,6 @@
+ 	osmlayer=new OpenLayers.Layer.OSM();
+ 	map.addLayer(osmlayer);
+ 
+-	/* Create and add Google Maps layers (only when online) */
+-
+-	if (navigator.onLine)
+-	{
+-		googlephysicallayer=new OpenLayers.Layer.Google(mozL10n.get('main-google-physical-layer-name'),{type: google.maps.MapTypeId.TERRAIN});
+-		map.addLayer(googlephysicallayer);
+-
+-		googlestreetslayer=new OpenLayers.Layer.Google(mozL10n.get('main-google-streets-layer-name'),{numZoomLevels: 20});
+-		map.addLayer(googlestreetslayer);
+-
+-		googlehybridlayer=new OpenLayers.Layer.Google(mozL10n.get('main-google-hybrid-layer-name'),{type: google.maps.MapTypeId.HYBRID, numZoomLevels: 20});
+-		map.addLayer(googlehybridlayer);
+-
+-		googlesatellitelayer=new OpenLayers.Layer.Google(mozL10n.get('main-google-satellite-layer-name'),{type: google.maps.MapTypeId.SATELLITE, numZoomLevels: 22});
+-		map.addLayer(googlesatellitelayer);
+-	};
+-
+ 	/* Zoom map to whole world */
+ 
+ 	map.zoomToMaxExtent();

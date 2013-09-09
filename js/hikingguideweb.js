@@ -19,6 +19,8 @@ var layerswitchersenlarged;
 var layerswitcherenlargeinterval=null;
 var localizationchecktimer;
 var mozL10n=navigator.mozL10n;
+var tracklength;
+var pathlength;
 document.getElementById("body").onload=WaitForLocalizationToLoad;
 OpenLayers.Renderer.symbol.arrow = [0, 0, -8, 8, 0, -20, 8, 8, 0, 0];
 
@@ -161,11 +163,20 @@ function NewTrackFileByInput(evt)
 	reader.onload=function(e)
 	{
 		var trackfeatures=trackparser.read(e.target.result);
+		tracklength=0;
 		for (trackfeatureindex in trackfeatures)
 		{
-			trackfeatures[trackfeatureindex].geometry.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+			trackfeatures[trackfeatureindex].geometry.transform(new OpenLayers.Projection("EPSG:4326"),new OpenLayers.Projection("EPSG:900913"));
+			for (pointindex in trackfeatures[trackfeatureindex].geometry.getVertices())
+			{
+				if (pointindex>0)
+				{
+					tracklength=tracklength+new OpenLayers.Geometry.LineString([trackfeatures[trackfeatureindex].geometry.getVertices()[pointindex-1],trackfeatures[trackfeatureindex].geometry.getVertices()[pointindex]]).getGeodesicLength(new OpenLayers.Projection("EPSG:900913"));
+				};
+			};
 		};
 		AddTrackLayerByFeatures(trackfeatures);
+		document.getElementById('track-length-display').innerHTML=tracklength.toFixed(0).toString()+' m.';
 	};
 	reader.readAsText(f);
 };
@@ -187,11 +198,20 @@ function NewTrackFileBySelect(evt)
 	reader.onload=function(e)
 	{
 		var trackfeatures=trackparser.read(e.target.result);
+		tracklength=0;
 		for (trackfeatureindex in trackfeatures)
 		{
 			trackfeatures[trackfeatureindex].geometry.transform(new OpenLayers.Projection("EPSG:4326"), new OpenLayers.Projection("EPSG:900913"));
+			for (pointindex in trackfeatures[trackfeatureindex].geometry.getVertices())
+			{
+				if (pointindex>0)
+				{
+					tracklength=tracklength+new OpenLayers.Geometry.LineString([trackfeatures[trackfeatureindex].geometry.getVertices()[pointindex-1],trackfeatures[trackfeatureindex].geometry.getVertices()[pointindex]]).getGeodesicLength(new OpenLayers.Projection("EPSG:900913"));
+				};
+			};
 		};
 		AddTrackLayerByFeatures(trackfeatures);
+		document.getElementById('track-length-display').innerHTML=tracklength.toFixed(0).toString()+' m.';
 	};
 	reader.readAsText(f);
 };
@@ -201,6 +221,8 @@ function NewTrackFileBySelect(evt)
 function NewTrackFileByKeyboard(evt)
 {
 	AddTrackLayerByFileOrDataUrl('tracks/'+document.getElementById('trackfile').value+'.gpx');
+	tracklength=0;
+	document.getElementById('track-length-display').innerHTML='';
 };
 
 /* Function to animate position precision circle */
@@ -266,6 +288,8 @@ function PositionUpdated(e)
 				}
 			)
 		]);
+		pathlength=pathlength+new OpenLayers.Geometry.LineString([new OpenLayers.Geometry.Point(lastx,lasty),new OpenLayers.Geometry.Point(e.point.x,e.point.y)]).getGeodesicLength(new OpenLayers.Projection("EPSG:900913"));
+		document.getElementById('path-length-display').innerHTML=pathlength.toFixed(0).toString()+' m.';
 	};
 
 	/* Draw new position drawings */
@@ -451,6 +475,8 @@ function TimerGeolocateCheck()
 function WayDelete()
 {
 	positionlayer.removeAllFeatures();
+	pathlength=0;
+	document.getElementById('path-length-display').innerHTML=pathlength.toFixed(0).toString()+' m.';
 };
 
 /* Function to open the Settings screen */
@@ -485,6 +511,8 @@ function EndSettings()
 		document.getElementById("locateplaypause").classList.add('invisible');
 		document.getElementById("waydelete").classList.add('invisible');
 	};
+	pathlength=0;
+	document.getElementById('path-length-display').innerHTML=pathlength.toFixed(0).toString()+' m.';
 	container=document.getElementById('container');
 	setTimeout(
 		function()

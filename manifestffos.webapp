@@ -3,7 +3,7 @@
 	"name": "HikingGuide",
 	"description": "A guide that will help you in your hikes with maps, tracks and GPS position",
 	"type": "privileged",
-	"launch_path": "/hikingguideweb.html",
+	"launch_path": "/hikingguide.html",
 	"icons":
 	{
 		"60": "/hikingguide60.png",
@@ -49,5 +49,6 @@
 			"description": "Necessary to read tracks from SD card",
 			"access": "readonly"
 		}
-	}
+	},
+	"csp": "default-src *; script-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline'"
 }
